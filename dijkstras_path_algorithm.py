@@ -19,10 +19,10 @@ def run_dijkstras(graph, src, dest):
         if minimum_distance_node == dest:
             # We build the shortest path and display it
             path = []
-            pred = dest
-            while pred != None:
-                path.append(pred)
-                pred = parent.get(pred, None)
+            prev = dest
+            while prev != None:
+                path.append(prev)
+                prev = parent.get(prev, None)
             print('shortest path: ' + str(path[::-1]) + " cost=" + str(distances[dest]))
             return
 
